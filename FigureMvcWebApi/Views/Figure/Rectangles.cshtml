@@ -1,0 +1,39 @@
+﻿@model FigureMvcWebApi.Model.Controllers.ModelLayer.Figure.Requests.SegmentRequest
+
+<h4>You can get rectangles which intersect with you segment</h4>
+<h4>Fill form please</h4>
+
+
+<div id="tags" style="max-width:40%!important">
+    <label>Input coordinate X point`s A: </label>
+    <input type="number" id="PointAX" style="max-width:100%!important;" value="2" />
+
+    <label>Input coordinate Y point`s A: </label>
+    <input type="number" id="PointAY" style="max-width:100%!important;" value="3" />
+
+    <label>Input coordinate X point`s B: </label>
+    <input type="number" id="PointBX" style="max-width:100%!important;" value="5" />
+
+    <label>Input coordinate Y point`s B: </label>
+    <input type="number" id="PointBY" style="max-width:100%!important;" value="3" />
+
+    <label>Input how many rectangles show per page</label>
+    <input type="number" id="Take" style="max-width:100%!important;" value="10" />
+</div>
+<div id="service" style="width:20%">
+    <input type="button" style="width: 100%!important;" name="name" onclick="getRectangles()" value="Apply" />
+</div>
+
+<div id="myPartialViewDiv">
+    
+
+</div>
+<div>
+    @{
+        @Html.Partial("Pagination");
+    }
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<script src="~/Scripts/jquery.twbsPagination.min.js"></script>
