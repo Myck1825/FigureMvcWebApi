@@ -2,12 +2,9 @@
 using FigureMvcWebApi.Model.Controllers.ModelLayer.Figure.Models;
 using FigureMvcWebApi.Model.Controllers.ModelLayer.Figure.Requests;
 using FigureMvcWebApi.Model.Controllers.Services;
-using FigureMvcWebApi.Model.Database.Entities;
 using FigureMvcWebApi.Model.Database.Repository;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace FigureMvcWebApi.Model.Database.Services.Controllers

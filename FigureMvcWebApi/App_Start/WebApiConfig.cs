@@ -2,8 +2,15 @@
 
 namespace FigureMvcWebApi
 {
+    /// <summary>
+    /// WebApi Configuration
+    /// </summary>
     public static class WebApiConfig
     {
+        /// <summary>
+        /// Register rule for route
+        /// </summary>
+        /// <param name="config"></param>
         public static void Register(HttpConfiguration config)
         {
             // Web API routes

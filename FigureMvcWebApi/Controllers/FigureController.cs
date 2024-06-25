@@ -9,7 +9,6 @@ namespace FigureMvcWebApi.Controllers
     /// <summary>
     /// Figure controller
     /// </summary>
-
     public class FigureController : Controller
     {
         private IRectangleService _rectangleService = null;
@@ -42,7 +41,6 @@ namespace FigureMvcWebApi.Controllers
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
         [Route("mvc/rectangles")]
-        [ValidateAntiForgeryToken]
         public async Task<JsonResult> GetRectanglesAsync(SegmentRequest request)
         {
             if (!ModelState.IsValid)

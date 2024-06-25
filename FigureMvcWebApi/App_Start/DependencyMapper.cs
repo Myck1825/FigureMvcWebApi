@@ -14,8 +14,14 @@ using System.Web.Http;
 
 namespace FigureMvcWebApi
 {
+    /// <summary>
+    /// Dependency configuration
+    /// </summary>
     public class DependencyMapper : NinjectModule
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public override void Load()
         {
             Database.SetInitializer<FigureDbContext>(null);
@@ -27,9 +33,6 @@ namespace FigureMvcWebApi
             this.Bind<IHeadLog>().To<HeadLog>();
             this.Bind<IAOResultLogger>().To<AOResultLogger>();
 
-            this.Bind<DefaultModelValidatorProviders>().ToConstant(new DefaultModelValidatorProviders(GlobalConfiguration.Configuration.Services.GetModelValidatorProviders()));
-
-
             var headLog = this.Kernel.Get<IHeadLog>();
             AOResultLoggerProvider.SetAOResultLogger(new AOResultLogger(headLog));
         }
@@ -39,7 +42,6 @@ namespace FigureMvcWebApi
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.ConstructServicesUsing(type => context.Kernel.Get(type));
-                cfg.AddProfile(new MapperProfile());
                 cfg.AddProfile<EntityToModelProfile>();
             });
 

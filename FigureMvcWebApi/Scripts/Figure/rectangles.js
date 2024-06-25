@@ -1,40 +1,12 @@
 ﻿// yourModel now contains your MVC (server side) model as json serialized model.
 function buildChart(dataSource, id, number) {
-    
-    //var dataSource = [
-    //    { 'X': '2', 'Y': 3 },
-    //    { 'X': '3', 'Y': 1 },
-    //    { 'X': '3', 'Y': 1 },
-    //    { 'X': '3', 'Y': 4 },
-    //    { 'X': '4', 'Y': 3 },
-    //    { 'X': '5', 'Y': 4 },
-    //    { 'X': '5', 'Y': 1 },
-    //    { 'X': '5', 'Y': 1 }
-
-        //    //{ argument: '3', value1: 15, value2: 10, value3: 60, value4: 40 }
-
-    //]
-    //console.log(dataSource);
-    //console.log(dataSource1);
-
-    $("#chartContainer" + number).dxChart({
+        $("#chartContainer" + number).dxChart({
         dataSource: dataSource,
        
-        //tooltip: { enabled: true },
         commonSeriesSettings: {
             argumentField: 'X',
-            type: 'line',
-            //label: {
-            //    visible: true,
-            //    connector: {
-            //        visible: true,
-            //        width: 1
-            //    }
-            //}
+            type: 'line'
         },
-        //argumentAxis: {
-        //    name: "X"
-        //},
         series: [
             { valueField: 'Y2', name: 'Segment' },
             { valueField: 'Y1', name: 'Rectangle Id: ' + id, point: { symbol: "rectangle" }, color: 'blue' },
@@ -116,40 +88,6 @@ function buildDataSourceForChart(rectangle, x1, y1, x2, y2) {
 
     index = dataSource.findIndex(x => x2 <= x.X);
     dataSource.splice(index, 0, { X: x2, Y2: y2 })
-
-    //for (let i = 0; i < dataSource.length; i++) {
-    //    if (i != dataSource.length - 1) {
-    //        if (dataSource[i].X <= x1 && x1 <= dataSource[i + 1]) {
-    //            dataSource.splice(i, 0, { X: x1, Y2: y1 })
-    //        }
-    //        if (dataSource[i].X <= x2 && x2 <= dataSource[i + 1]) {
-    //            dataSource.splice(i, 0, { X: x2, Y2: y2 })
-    //        }
-    //    }
-    //    else if (i == dataSource.length - 1 && dataSource[i].X <= x1) {
-    //        dataSource.splice(i, 0, { X: x1, Y2: y1 })
-    //    }
-    //    else if (i == dataSource.length - 1 && dataSource[i].X <= x2) {
-    //        dataSource.splice(i, 0, { X: x2, Y2: y2 })
-    //    }
-    //    else if (i == dataSource.length - 1 && dataSource[i].X <= x1) {
-    //        dataSource.splice(i, 0, { X: x1, Y2: y1 })
-    //    }
-    //    else if (i == dataSource.length - 1 && dataSource[i].X <= x2) {
-    //        dataSource.splice(i, 0, { X: x2, Y2: y2 })
-    //    }
-    //}
-
-    //dataSource = dataSource.sort(function (a, b) {
-    //    if (a.X > b.X) {
-    //        return 1;
-    //    }
-    //    if (a.X < b.X) {
-    //        return -1;
-    //    }
-    //    // a должно быть равным b
-    //    return 0;
-    //});
 
     dataSource.push({ X: rectangle.PointC.X, Y3: rectangle.PointC.Y });
     dataSource.push({ X: rectangle.PointA.X, Y3: rectangle.PointA.Y });

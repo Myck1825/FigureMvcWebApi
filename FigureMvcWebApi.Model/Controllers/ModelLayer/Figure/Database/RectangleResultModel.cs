@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FigureMvcWebApi.Model.Controllers.ModelLayer.Figure.Database
 {
-    public class RectangleResultModek
+    public class RectangleResultModel
     {
         public int CountRow { get; set; }
 

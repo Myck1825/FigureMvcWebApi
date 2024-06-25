@@ -3,13 +3,20 @@ using System.Web.Routing;
 
 namespace FigureMvcWebApi
 {
+    /// <summary>
+    /// Route config
+    /// </summary>
     public class RouteConfig
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="routes"></param>
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            //routes.MapMvcAttributeRoutes();
+            routes.MapMvcAttributeRoutes();
 
             routes.MapRoute(
                 name: "Rectangles",

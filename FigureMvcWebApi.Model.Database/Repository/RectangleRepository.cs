@@ -1,8 +1,5 @@
 ﻿using FigureMvcWebApi.Model.Controllers.ModelLayer.Figure.Database;
-using FigureMvcWebApi.Model.Controllers.ModelLayer.Figure.Models;
-using FigureMvcWebApi.Model.Controllers.ModelLayer.Figure.Requests;
 using FigureMvcWebApi.Model.Database.Entities;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -15,7 +12,7 @@ namespace FigureMvcWebApi.Model.Database.Repository
         {
         }
 
-        public IEnumerable<RectangleResultModek> GetList(int x1, int y1, int x2, int y2, int skip = 0, int take = 0)
+        public IEnumerable<RectangleResultModel> GetList(int x1, int y1, int x2, int y2, int skip = 0, int take = 0)
         {
             SqlParameter[] sqlParamList = new SqlParameter[6]
             {
@@ -26,7 +23,7 @@ namespace FigureMvcWebApi.Model.Database.Repository
                 new SqlParameter {ParameterName = "@skip", Value = skip},
                 new SqlParameter {ParameterName = "@take", Value = take}
             };
-            var result = _dbContext.Database.SqlQuery<RectangleResultModek>("exec dbo.sp_Intersect_Procedure @x1, @y1, @x2, @y2, @skip, @take", sqlParamList);
+            var result = _dbContext.Database.SqlQuery<RectangleResultModel>("exec dbo.sp_Intersect_Procedure @x1, @y1, @x2, @y2, @skip, @take", sqlParamList);
             return result.ToList();
         }
     }

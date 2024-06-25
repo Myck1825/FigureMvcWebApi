@@ -7,9 +7,6 @@
 }
 
 function pagination (totalCount, take) {
-
-    //if (totalCount == undefined || take == undefined)
-    //    window.location.href = "/";
     window.pagObj = $('#pagination').twbsPagination({
         totalPages: totalCount / take,
         visiblePages: 10,

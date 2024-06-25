@@ -51,7 +51,7 @@
     <Compile Include="Code.cs" />
     <Compile Include="Constants\ErrorMessages.cs" />
     <Compile Include="Controllers\ModelLayer\BaseModelForListRequest.cs" />
-    <Compile Include="Controllers\ModelLayer\Figure\Database\RectangleResultModek.cs" />
+    <Compile Include="Controllers\ModelLayer\Figure\Database\RectangleResultModel.cs" />
     <Compile Include="Controllers\ModelLayer\Figure\Models\FigureResponse.cs" />
     <Compile Include="Controllers\ModelLayer\Figure\Models\PointModel.cs" />
     <Compile Include="Controllers\ModelLayer\Figure\Models\RectangleModel.cs" />
